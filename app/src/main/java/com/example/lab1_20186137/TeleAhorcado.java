@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import java.util.Random;
 
@@ -34,6 +35,7 @@ public class TeleAhorcado extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         int id_palabras=R.id.palabras;
         int id_letras=R.id.letras;
+
 
         super.onCreate(savedInstanceState);
 
@@ -139,4 +141,7 @@ public class TeleAhorcado extends AppCompatActivity {
             gridView.getChildAt(i).setEnabled(false);
         }
     }
+
+
+
 }
