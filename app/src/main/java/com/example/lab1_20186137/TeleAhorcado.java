@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,6 +29,7 @@ public class TeleAhorcado extends AppCompatActivity {
     private ImageView[]partes;
     private int intentos=6;
     private int parte_actual;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         int id_palabras=R.id.palabras;
@@ -50,8 +52,37 @@ public class TeleAhorcado extends AppCompatActivity {
         partes[5]=findViewById(R.id.piederecho);
         playGame();
 
+        Button botonNuevoJuego = findViewById(R.id.button2);
+        botonNuevoJuego.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reiniciarjuego();
+            }
+        });
     }
+    private void reiniciarjuego(){
+        contenedor.removeAllViews();
+        TextView mensajeGanaste = findViewById(R.id.mensaje_ganaste);
+        mensajeGanaste.setVisibility(View.INVISIBLE);
+        TextView mensajePerdiste = findViewById(R.id.mensaje_perdiste);
+        mensajePerdiste.setVisibility(View.INVISIBLE);
 
+        ImageView cabeza = findViewById(R.id.cabeza);
+        ImageView torso = findViewById(R.id.torso);
+        ImageView manoIzquierda = findViewById(R.id.manoizquierda);
+        ImageView manoDerecha = findViewById(R.id.manoderecha);
+        ImageView pieIzquierdo = findViewById(R.id.pieizquierdo);
+        ImageView pieDerecho = findViewById(R.id.piederecho);
+
+        ImageView[] partes = {cabeza, torso, manoIzquierda, manoDerecha, pieIzquierdo, pieDerecho};
+        for (ImageView parte : partes) {
+            parte.setVisibility(View.INVISIBLE);
+        }
+        for (int i = 0; i < gridView.getChildCount(); i++) {
+            gridView.getChildAt(i).setEnabled(true);
+        }
+        playGame();
+    }
     private void playGame(){
         String nueva_palabra=palabras[random.nextInt(palabras.length)];
         while (nueva_palabra.equals(a))nueva_palabra=palabras[random.nextInt(palabras.length)];
