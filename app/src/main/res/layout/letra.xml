@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="37dp"
     android:backgroundTint="#10355C"
-    android:onClick="letterPressed"
+    android:onClick="clic"
     android:textColor="@color/white"
     android:textSize="10sp"
     android:textStyle="bold"
