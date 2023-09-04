@@ -12,11 +12,135 @@
         android:layout_height="242dp"
         android:layout_marginStart="63dp"
         android:layout_marginTop="115dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="374dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintBottom_toTopOf="@+id/palabra"
+        app:layout_constraintEnd_toStartOf="@+id/manoderecha"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/antenna_sinfondo" />
+
+    <ImageView
+        android:id="@+id/cabeza"
+        android:layout_width="69dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="70dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/head1_sinfondo" />
+
+    <ImageView
+        android:id="@+id/torso"
+        android:layout_width="46dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginEnd="18dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/cabeza"
+        app:srcCompat="@drawable/torso_sinfondo" />
+
+    <ImageView
+        android:id="@+id/pieizquierdo"
+        android:layout_width="47dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="197dp"
+        android:layout_marginBottom="14dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:srcCompat="@drawable/brazodere_piernaizq_sinfondo" />
+
+    <ImageView
+        android:id="@+id/manoderecha"
+        android:layout_width="47dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cabeza"
+        app:srcCompat="@drawable/brazodere_piernaizq_sinfondo" />
+
+    <ImageView
+        android:id="@+id/piederecho"
+        android:layout_width="51dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="14dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pieizquierdo"
+        app:srcCompat="@drawable/brazoizq_piernadere_sinfondo" />
+
+    <ImageView
+        android:id="@+id/manoizquierda"
+        android:layout_width="51dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="197dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/cabeza"
+        app:srcCompat="@drawable/brazoizq_piernadere_sinfondo" />
+
+    <LinearLayout
+        android:id="@+id/palabras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="222dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="33dp"
+        android:text="Nuevo Juego"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <GridView
+        android:id="@+id/letras"
+        android:layout_width="329dp"
+        android:layout_height="182dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="22dp"
+
+        android:horizontalSpacing="5dp"
+        android:numColumns="7"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/palabras" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
